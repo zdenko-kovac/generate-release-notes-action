@@ -32,6 +32,6 @@ runs:
         INPUT_TARGET_REF: ${{ inputs.target-ref }}
         INPUT_TOKEN: ${{ inputs.personal-token }}
         REPO: ${{ github.repository }}
-        API_URL: "https://github.tools.sap/api/v3"
+        API_URL: ${{ github.api_url }}
       run: ${{ github.action_path }}/generate-release-notes.sh
       shell: bash
