@@ -52,3 +52,20 @@ Composite GitHub Action that generates categorized release notes from convention
 ## First Release Handling
 
 If `previous-tag` is empty, `v0.0.0`, or `0.0.0`, the action outputs a simple "Initial Release" message instead of comparing commits.
+
+## Security Hardening
+
+- All `${{ inputs.* }}` values are passed via the `env:` block (`INPUT_*` variables), never interpolated directly into the shell script
+- The script runs with `set -euo pipefail` for fail-fast behavior on errors, unset variables, or broken pipes
+- The GitHub Compare API response is checked for HTTP status; non-2xx responses fail the action with a `::error::` annotation
+- All `$GITHUB_OUTPUT` redirections are properly quoted
+
+## Tests
+
+The action logic lives in `generate-release-notes.sh` (extracted from the inline `run:` block). Tests use Node.js built-in `node:test` with zero dependencies.
+
+```bash
+npm test
+```
+
+26 tests across 7 suites cover first-release handling, API error handling, commit filtering, conventional-commit categorization, output structure, and section ordering. `curl` is mocked via PATH shadowing; `jq` runs for real.

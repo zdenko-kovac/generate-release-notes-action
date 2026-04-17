@@ -1,0 +1,32 @@
+{
+  "commits": [
+    {
+      "sha": "aaa1111222233334444",
+      "commit": {
+        "author": { "name": "cs-devops-gh-actions-serviceuser" },
+        "message": "chore: automated release"
+      }
+    },
+    {
+      "sha": "bbb2222333344445555",
+      "commit": {
+        "author": { "name": "ospo-renovate[bot]" },
+        "message": "fix(deps): update dependency axios to v1.6.0"
+      }
+    },
+    {
+      "sha": "ccc3333444455556666",
+      "commit": {
+        "author": { "name": "Dev User" },
+        "message": "Merge pull request #42 from feature-branch"
+      }
+    },
+    {
+      "sha": "ddd4444555566667777",
+      "commit": {
+        "author": { "name": "Dev User" },
+        "message": "Bump version to 1.3.0"
+      }
+    }
+  ]
+}

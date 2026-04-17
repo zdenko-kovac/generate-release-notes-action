@@ -1,0 +1,7 @@
+{
+  "name": "generate-release-notes-action",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}
