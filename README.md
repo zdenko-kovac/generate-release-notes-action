@@ -5,10 +5,10 @@ Composite GitHub Action that generates categorized release notes from convention
 ## Usage
 
 ```yaml
-- uses: cs-actions/generate-release-notes-action@v1
+- uses: zdenko-kovac/generate-release-notes-action@v1
   id: release-notes
   with:
-    personal-token: ${{ env.ACCESS_TOKEN }}
+    personal-token: ${{ secrets.ACCESS_TOKEN }}
     previous-tag: v1.2.3
     new-tag: v1.3.0
     target-ref: main  # optional, defaults to "main"
